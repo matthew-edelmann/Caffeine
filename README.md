@@ -31,7 +31,7 @@ The first model I wanted to make is a logistic regression model that can determi
 
 In our case the baseline is 71.6% as 29.4% of the drinks are a type of coffee.
 
-After running our model we get this score:
+After running our model we get this R2 score:
 
 Training R2: 0.7352297592997812
 Testing R2: 0.738562091503268
@@ -39,6 +39,73 @@ Testing R2: 0.738562091503268
 While this model is neither overfit or underfit, it's only marginally better than the baseline. But let's observe it in a confussion matrix:
 
 ![Alt text](./pics/coffee_reg.png)
+
+Looking at this confusion matrix, we see that it can guess not coffee better than it can guess coffee.
+
+Looking at the names of the drinks, we see that the word coffee appears a lot in coffee drinks. Perhaps we can find a better model as a classification model that looks at the names of the drinks. I will do this for every drink type and show their R2 score:
+
+Coffee:
+
+Train: 0.986870897155361
+Test: 0.9411764705882353
+
+![Alt text](./pics/coffee_class.png)
+
+Energy Drinks:
+
+Train: 0.9715536105032823
+Test: 0.9281045751633987
+
+![Alt text](./pics/ed.png)
+
+Energy Shots:
+
+Train: 1.0
+Test: 0.9803921568627451
+
+![Alt text](./pics/es.png)
+
+Soft Drinks:
+
+Train: 0.9781181619256017
+Test: 0.9607843137254902
+
+![Alt text](./pics/soft_d.png)
+
+Tea:
+
+Train: 0.9934354485776805
+Test: 0.9869281045751634
+
+![Alt text](./pics/tea.png)
+
+Water:
+
+Train: 1.0
+Test: 0.9869281045751634
+
+![Alt text](./pics/water.png)
+
+All of these models are good
+
+## Conclusion:
+
+While it is difficult to tell what type of drink it is based on volume, calories, and caffiene content, we can based on the label. What this tells us is 2 things:
+
+1. Companies label their products properly
+2. All categories of drinks that boost you up have similar specs. So choose the drink that fits you best!
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
